@@ -2,6 +2,7 @@
 margin: 0;
 padding: 0;
 box-sizing: border-box;
+font-family: 'Avenir', sans-serif;
 }
 
 h1 {
@@ -17,6 +18,13 @@ h1 {
 
 }
 
+.paragraph {
+    display: block;
+    line-height: 4vh;
+    text-align: left;
+    padding: 10px 10px;
+}
+
 
 .chicken {
     display: inline-block;
@@ -26,6 +34,9 @@ h1 {
     padding: 10px 20px;
     margin: 10px;
     background-color: gray;
+    word-wrap: break-word;
+    overflow: hidden;
+    
 }
 
 .chicken-label {
@@ -41,9 +52,9 @@ h1 {
 
 .chicken-label h3 {
     position: static;
-    overflow: auto;
-    width: auto;
-    height: auto;
+   
+    text-overflow: clip;
+    
 }
 
 .beef {
@@ -54,6 +65,8 @@ h1 {
     padding: 10px 20px;
     margin: 10px;
     background-color: gray;
+    word-wrap: break-word;
+    overflow: hidden;
 }
 
 .beef-label {
@@ -82,12 +95,14 @@ h1 {
     padding: 10px 20px;
     margin: 10px;
     background-color: gray; 
+    word-wrap: break-word;
+    overflow: hidden;
 }
 
 .sushi-label {
     position: relative;
     float: right;
-    background-color: pink;
+    background-color: rgb(226, 214, 103);
     width: 35%;
     text-align: center;
     border: 1px solid black;
@@ -97,10 +112,92 @@ h1 {
 
 .shushi-label h3 {
     position: static;
-    overflow: auto;
+    overflow: visible;
 }
 
 p {
     position: relative;
     margin: 15px 10px;
+    display: inline;
+    overflow: auto;
+    
+    
 }
+
+/* Large screens */
+@media (max-width: 992px) {
+    .chicken {
+        width: 80%;
+    }
+    .beef {
+        width: 80%;
+    }
+    .sushi {
+        width: 95%;
+        position: absolute;
+        top: 290px;
+        justify-content: center;
+    }
+    .container {
+        
+        align-content: center;
+    }
+}
+    
+
+/* Medium screens */
+@media (max-width: 767px) and (min-width: 991px) {
+    .chicken {
+        width: 50%;
+        font-size: 8px;
+    }
+    .beef {
+        width: 50%;
+        font-size: 8px;
+    }
+    .sushi {
+        width: 50%;
+    }
+    .paragraph p {
+        text-align: center;
+    } 
+
+    .
+}
+
+/* Small screens */
+
+@media (max-width: 767px) {
+    .chicken {
+        position: relative;
+        bottom: 30px;
+        left: 150px;
+        display: block;
+        width: 55%;
+    }
+
+    .beef {
+        position: relative;
+        bottom: 20px;
+        left: 150px;
+        display: block;
+        width: 55%;
+    }
+
+    .sushi {
+        position: relative;
+        display: block;
+        width: 55%;
+        top: -10px;
+        left: 150px;
+    }
+
+    .container {
+     display: block;
+    }
+    p {
+        text-size: 8px;
+    }
+}
+
+   
